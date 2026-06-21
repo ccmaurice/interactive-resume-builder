@@ -1,0 +1,995 @@
+/* ==========================================
+   CSS variables & Theme Tokens
+   ========================================== */
+:root {
+  /* UI Colors - Dark Theme (Default) */
+  --bg-app: #0b0f19;
+  --bg-sidebar: #111827;
+  --bg-card: #1f2937;
+  --border-color: #374151;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent: #10b981;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --glass-bg: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Resume Page Colors (Independent of App Theme) */
+  --resume-bg: #ffffff;
+  --resume-text: #1f2937;
+  --resume-text-light: #4b5563;
+  --resume-accent: #1e3a8a; /* Deep navy */
+  --resume-accent-light: #3b82f6;
+  --resume-border: #e5e7eb;
+}
+
+/* Light Theme Variables for UI */
+body.light-theme {
+  --bg-app: #f8fafc;
+  --bg-sidebar: #ffffff;
+  --bg-card: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --accent: #059669;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   Base Styles
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  height: 100vh;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ==========================================
+   App Layout
+   ========================================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top Header */
+.app-header {
+  height: 70px;
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--primary), #a855f7);
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.header-logo h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-logo h1 span {
+  color: var(--primary);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.styled-select {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.styled-select:focus {
+  border-color: var(--primary);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* ==========================================
+   Buttons
+   ========================================== */
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+.btn-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   Workspace Layout
+   ========================================== */
+.workspace {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+/* Left Editor Panel */
+.editor-panel {
+  width: 480px;
+  min-width: 400px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.panel-header .subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+.editor-sections {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+/* Accordion Item styles */
+.accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.accordion-item:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.accordion-item.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.1);
+}
+
+.accordion-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.accordion-header .icon {
+  font-size: 18px;
+}
+
+.accordion-content {
+  padding: 20px;
+  display: none;
+  border-top: 1px solid var(--border-color);
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+/* Form Styles */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.col-12 { grid-column: span 12; }
+.col-6 { grid-column: span 6; }
+.col-4 { grid-column: span 4; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+body.light-theme .form-group input,
+body.light-theme .form-group textarea {
+  background-color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Dynamic Item Forms */
+.dynamic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dynamic-item {
+  border: 1px dashed var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.remove-item-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-item-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+/* Right Preview Panel */
+.preview-panel {
+  flex: 1;
+  background-color: var(--bg-app);
+  padding: 40px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.preview-container {
+  box-shadow: var(--shadow-lg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================
+   Resume sheet dimensions (A4 optimized)
+   ========================================== */
+.resume-sheet {
+  width: 794px; /* Standard A4 width in pixels at 96 DPI */
+  min-height: 1123px; /* Standard A4 height in pixels at 96 DPI */
+  background-color: var(--resume-bg);
+  color: var(--resume-text);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-size: 13px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Reset heading overrides inside resume */
+.resume-sheet h1, 
+.resume-sheet h2, 
+.resume-sheet h3, 
+.resume-sheet h4 {
+  color: var(--resume-accent);
+  margin-bottom: 4px;
+}
+
+/* Links inside resume sheet */
+.resume-sheet a {
+  color: var(--resume-accent-light);
+  text-decoration: none;
+}
+
+.resume-sheet a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   TEMPLATE 1: MODERN TECH (Sidebar Layout)
+   ========================================================================== */
+.resume-sheet.modern-tech {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 0;
+  gap: 0;
+}
+
+.modern-tech .sidebar {
+  background-color: #f1f5f9; /* Soft grey sidebar background */
+  border-right: 1px solid var(--resume-border);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modern-tech .main-content {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Sidebar Elements */
+.modern-tech .header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modern-tech .name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+.modern-tech .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modern-tech .contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--resume-text-light);
+  border-top: 1px solid var(--resume-border);
+  padding-top: 16px;
+}
+
+.modern-tech .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  word-break: break-all;
+}
+
+.modern-tech .sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modern-tech .sidebar-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0f172a;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+/* Skill tags */
+.modern-tech .skill-group {
+  font-size: 12px;
+  color: var(--resume-text);
+  margin-bottom: 6px;
+}
+
+.modern-tech .skill-group strong {
+  color: #0f172a;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.modern-tech .skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.modern-tech .skill-badge {
+  background-color: #e2e8f0;
+  color: #334155;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Main Section Elements */
+.modern-tech .section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modern-tech .section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--resume-border);
+  padding-bottom: 6px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-tech .summary-text {
+  color: var(--resume-text-light);
+  line-height: 1.6;
+}
+
+/* Timelines / Experience list */
+.modern-tech .timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  padding-left: 0px;
+  margin-bottom: 12px;
+}
+
+.modern-tech .timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.modern-tech .timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.modern-tech .item-role-org {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.modern-tech .item-role-org span {
+  font-weight: 400;
+  color: var(--resume-text-light);
+  font-style: italic;
+}
+
+.modern-tech .item-date {
+  font-size: 11px;
+  color: var(--primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.modern-tech .item-bullets {
+  padding-left: 18px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.modern-tech .item-bullets li {
+  color: var(--resume-text-light);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Project styles */
+.modern-tech .project-item {
+  margin-bottom: 12px;
+}
+
+.modern-tech .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.modern-tech .project-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.modern-tech .project-links {
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   TEMPLATE 2: MINIMALIST (Clean Sans-Serif Layout)
+   ========================================================================== */
+.resume-sheet.minimalist {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 50px;
+}
+
+.minimalist .header {
+  text-align: left;
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 16px;
+}
+
+.minimalist .name {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -1px;
+}
+
+.minimalist .title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--resume-text-light);
+  margin-top: 2px;
+}
+
+.minimalist .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--resume-text-light);
+}
+
+.minimalist .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.minimalist .section {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  border-bottom: 1px solid var(--resume-border);
+  padding-bottom: 16px;
+}
+
+.minimalist .section:last-child {
+  border-bottom: none;
+}
+
+.minimalist .section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+.minimalist .summary-text {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--resume-text-light);
+}
+
+.minimalist .competency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.minimalist .competency-item {
+  font-size: 12px;
+  color: var(--resume-text-light);
+}
+
+.minimalist .competency-item strong {
+  color: #0f172a;
+}
+
+.minimalist .list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.minimalist .item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.minimalist .item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.minimalist .item-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.minimalist .item-meta {
+  font-size: 12px;
+  color: var(--resume-text-light);
+  font-style: italic;
+}
+
+.minimalist .item-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.minimalist .item-bullets {
+  padding-left: 16px;
+}
+
+.minimalist .item-bullets li {
+  font-size: 12px;
+  color: var(--resume-text-light);
+  line-height: 1.5;
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   TEMPLATE 3: EXECUTIVE (Centered Serif Layout)
+   ========================================================================== */
+.resume-sheet.executive {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 50px 60px;
+  font-family: 'Lora', 'Georgia', serif;
+}
+
+.executive .header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.executive .name {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.executive .title {
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--resume-text-light);
+  margin-bottom: 10px;
+}
+
+.executive .contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 11.5px;
+  color: var(--resume-text-light);
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.executive .section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.executive .section-title {
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1e3a8a;
+  border-bottom: 1px solid #94a3b8;
+  padding-bottom: 3px;
+  text-align: left;
+}
+
+.executive .summary-text {
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #334155;
+}
+
+.executive .competency-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.executive .competency-item {
+  font-size: 12px;
+  color: #334155;
+}
+
+.executive .competency-item strong {
+  color: #1e293b;
+}
+
+.executive .timeline-item {
+  margin-bottom: 14px;
+}
+
+.executive .timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12.5px;
+}
+
+.executive .item-title {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.executive .item-title em {
+  font-weight: 400;
+  color: #475569;
+}
+
+.executive .item-date {
+  font-size: 11px;
+  font-style: italic;
+  color: #475569;
+}
+
+.executive .item-bullets {
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.executive .item-bullets li {
+  font-size: 12px;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   PRINT / PDF CSS STYLES (Clean Export Settings)
+   ========================================================================== */
+@media print {
+  /* Hide all editor panels, header controls, etc */
+  .no-print, 
+  .app-header, 
+  .editor-panel, 
+  .remove-item-btn,
+  .btn {
+    display: none !important;
+  }
+
+  /* Reset workspace and background colors */
+  body, 
+  .app-container, 
+  .workspace, 
+  .preview-panel {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .preview-container {
+    box-shadow: none !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .resume-sheet {
+    box-shadow: none !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Force light theme elements on modern tech sidebar */
+  .modern-tech .sidebar {
+    background-color: #f1f5f9 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .modern-tech .skill-badge {
+    background-color: #e2e8f0 !important;
+    color: #334155 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Set page rules */
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+}
