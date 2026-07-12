@@ -95,7 +95,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 16px;
   z-index: 10;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
@@ -134,32 +134,35 @@ body {
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .control-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 .control-group label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .styled-select {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-main);
-  padding: 8px 16px;
+  padding: 7px 12px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   outline: none;
   cursor: pointer;
   transition: border-color 0.2s;
+  white-space: nowrap;
 }
 
 .styled-select:focus {
@@ -168,7 +171,13 @@ body {
 
 .action-buttons {
   display: flex;
-  gap: 8px;
+  gap: 6px;
+}
+
+.app-header .btn {
+  padding: 8px 12px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 /* ==========================================
