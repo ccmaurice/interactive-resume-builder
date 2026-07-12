@@ -2,85 +2,154 @@
 // Preloaded Resume Data (Default Sample Profile)
 // ==========================================
 const defaultResumeData = {
-  name: "Alex Carter",
-  title: "Senior Full Stack Engineer & Cloud Architect",
-  email: "alex.carter@example.com",
-  phone: "+1 (555) 019-2834",
-  location: "San Francisco, CA | Remote",
-  summary: "Innovative and results-driven Senior Full Stack Engineer with over 8 years of experience designing, building, and deploying robust web applications and cloud infrastructure. Specializes in React, Node.js, and multi-tenant SaaS architecture. Proven record of leading cross-functional teams, optimizing system performance, and scaling cloud-native services. Passionate about developer experience, clean code, and mentoring junior developers.",
+  name: "Chukwudebelu Chinedu Maurice",
+  title: "FULL STACK DEVELOPER, IBDP/MYP COMPUTER TEACHER & IT ENGINEER",
+  email: "mauricenex@gmail.com",
+  phone: "+234 08162476247 | 0993-942-167",
+  location: "Kinshasa, DRC | Lagos, Nigeria",
+  summary: "Multifaceted educator, full-stack software engineer, and IT specialist with over 10 years of experience across web/mobile application development, UI/UX design, and technology instruction. Proven track record in designing and delivering production-grade multi-tenant SaaS products and modernizing educational platforms (LMS). Skilled in bridging the gap between complex engineering requirements and institutional leadership through clear communication, robust technical architecture, and pedagogical excellence. Passionate about classroom technology (AI, VR), coding, and physical well-being (certified fitness coach & kickboxing trainer) to drive holistic development.",
   competencies: {
-    languages: "JavaScript (Expert), TypeScript (Expert), Python (Advanced), HTML5/CSS3 (Expert)",
-    frameworks: "React, Next.js, Node.js, Express, Tailwind CSS",
-    backend: "PostgreSQL, MongoDB, Redis, AWS (S3, EC2, Lambda), Docker",
-    systems: "Linux Systems, CI/CD Pipelines (GitHub Actions), Git, Docker Containerization",
-    soft: "Technical Leadership, Team Mentorship, Agile Methodologies, Clear Communication, Problem Solving"
+    languages: "PHP (Expert), Python (Expert), JavaScript (Expert), HTML5/CSS3 (Expert)",
+    frameworks: "Next.js (App Router), React, Tailwind CSS, Scratch",
+    backend: "PostgreSQL, Prisma ORM, MySQL, Supabase, JWT Authentication, Vercel",
+    systems: "Computer OS installation, software maintenance, hardware networking, and laptop repair",
+    soft: ""
   },
   experience: [
     {
-      role: "Lead Full Stack Engineer",
-      org: "CloudScale Solutions, San Francisco, CA",
+      role: "International Baccalaureate MYP/DP Computer Teacher",
+      org: "Jewels International School of Kinshasa (JISK), Congo",
       date: "2023 – Present",
       bullets: [
-        "Architected and deployed a multi-tenant SaaS analytics platform using Next.js, TypeScript, and AWS, improving page load speeds by 40%",
-        "Led a team of 6 engineers, conducting code reviews, implementing CI/CD pipelines, and establishing coding best practices",
-        "Reduced infrastructure costs by 25% through optimization of serverless functions and database queries"
+        "Leads Digital and Product Design instruction for MYP 4, 5 (grades 9-10) and DP students",
+        "Implements engaging lesson plans incorporating the MYP design cycle and multimedia resources",
+        "Conducts formative and summative assessments to meet diverse learning needs"
       ]
     },
     {
-      role: "Senior Software Engineer",
-      org: "Apex Tech Systems, Austin, TX",
-      date: "2020 – 2023",
+      role: "Full Stack Developer",
+      org: "SkillTech",
+      date: "2022 – Present",
       bullets: [
-        "Developed scalable RESTful and GraphQL APIs in Node.js/Express, serving over 100k daily active users",
-        "Migrated legacy monolithic application to a microservices architecture, increasing system uptime to 99.9%",
-        "Collaborated with UX/UI designers to build a reusable design system in React, boosting frontend development velocity by 30%"
+        "Develops and manages online IT training programs and Python coding curriculum",
+        "Engineered a production-ready Multi-Tenant SaaS LMS featuring data isolation and verifiable PDF certificates",
+        "Project URL: https://skilltech.com.ng | GitHub: https://github.com/ccmaurice"
       ]
     },
     {
-      role: "Software Engineer",
-      org: "Innovate Web Lab, Boston, MA",
-      date: "2018 – 2020",
+      role: "English, Computer, Biology and Civic Education Teacher",
+      org: "Power Tech International English School, Kinshasa",
+      date: "2022 – 2023",
       bullets: [
-        "Built and maintained responsive frontend web interfaces using React and Redux",
-        "Integrated third-party payment gateways (Stripe, PayPal) and social authentication systems",
-        "Optimized SQL queries and database schemas in PostgreSQL, reducing query latency by 15%"
+        "Taught English, Computer Science, Biology, and Civic Education for grades 7–12",
+        "Spearheaded the integration of educational technology tools and Learning Management Systems (LMS)",
+        "Collaborated with school administration to develop and implement a comprehensive technology plan"
+      ]
+    },
+    {
+      role: "ICT and STEM Educator / Senior Web Developer",
+      org: "Mater Dei Schools, Lagos, Nigeria",
+      date: "2016 – 2022",
+      bullets: [
+        "Taught ICT and STEM subjects (Computer Science, IT, and basic Science) to students in grades 6-12",
+        "Developed a comprehensive school LMS and eBook application, managing databases, backup systems, and recovery",
+        "Designed an audio book and painting application for preschool students"
+      ]
+    },
+    {
+      role: "Senior System Engineer",
+      org: "ICT Expertz & CcMaurice Technologies",
+      date: "2015 – Present",
+      bullets: [
+        "Delivers high-level ICT consultancy, including software development and laptop repairs",
+        "Provides specialized training in computer programming and graphic animation"
+      ]
+    },
+    {
+      role: "Basic Technology and English Teacher",
+      org: "National Youth Service Corps (NYSC), Jos, Nigeria",
+      date: "2013 – 2014",
+      bullets: [
+        "Taught Basic Technology and English to students in grade 6-10, promoting digital literacy",
+        "Developed and implemented engaging lesson plans, incorporating multimedia resources",
+        "Assessed student progress and provided feedback, and adapted instruction to meet diverse learning needs"
+      ]
+    },
+    {
+      role: "Fitness Coach and Kickboxing Trainer",
+      org: "Ginars Fitness Gym, Lagos, Nigeria",
+      date: "2012 – 2021",
+      bullets: [
+        "Designed and delivered group fitness classes, personal training session, and kickboxing / self-defence programs",
+        "Provided massage therapy sessions, swimming classes, and fitness well-being updates"
       ]
     }
   ],
   projects: [
     {
-      name: "SaaS DevPortal",
-      links: "React, Node.js, AWS, GitHub: github.com/example/devportal",
+      name: "Multi-Tenant SaaS LMS",
+      links: "Next.js, PostgreSQL, Prisma",
       bullets: [
-        "An open-source developer portal hosting API documentation, interactive sandboxes, and rate-limiting controls",
-        "Integrated custom Markdown rendering and real-time API logs visualization using WebSockets"
-      ]
-    },
-    {
-      name: "TaskFlow Manager",
-      links: "TypeScript, Next.js, Tailwind CSS, Vercel",
-      bullets: [
-        "A lightweight, collaborative project management tool featuring drag-and-drop Kanban boards and interactive gantt charts"
+        "A full-stack learning platform built with Next.js and PostgreSQL using Prisma",
+        "Features role-based access control, tenant data isolation, and public verification of credentials via QR codes"
       ]
     }
   ],
   education: [
     {
-      degree: "B.S. in Computer Science",
-      school: "Stanford University, Stanford, CA",
-      date: "2014 – 2018"
+      degree: "M.Sc. Information Technology (In View)",
+      school: "Miva Open University",
+      date: ""
+    },
+    {
+      degree: "UK Teacher Certification Program Course",
+      school: "Golden Links UK",
+      date: "2023"
+    },
+    {
+      degree: "B.Sc. Environmental Management Science",
+      school: "Anambra State University, Uli",
+      date: "2012"
+    },
+    {
+      degree: "Diploma in Computer and Information Technology",
+      school: "International Machine System (IMS), Lagos",
+      date: "2008"
+    },
+    {
+      degree: "St. Finbarr’s College of Science and Technology (SSLC)",
+      school: "Akoka, Lagos, Nigeria",
+      date: "2004"
     }
   ],
   certifications: [
-    { name: "AWS Certified Solutions Architect - Associate", issuer: "Amazon Web Services", date: "2024" },
-    { name: "Certified Kubernetes Administrator (CKA)", issuer: "Cloud Native Computing Foundation", date: "2023" },
-    { name: "Professional Scrum Master (PSM I)", issuer: "Scrum.org", date: "2022" }
+    { name: "Agentic AI Certified Foundations Associate", issuer: "Oracle", date: "Jul 05, 2026" },
+    { name: "Fundamentals of AI", issuer: "Cognitive Class - IBM Skills Network", date: "Jun 28, 2026" },
+    { name: "AWS AI Practitioner Challenge", issuer: "Udacity", date: "Jun 23, 2026" },
+    { name: "Prompt Engineering & Programming with OpenAI", issuer: "Columbia+", date: "Apr 07, 2026" },
+    { name: "Software Engineering (CS302)", issuer: "Saylor Academy", date: "Mar 22, 2026" },
+    { name: "Data Science with Python & AI", issuer: "Golden Links UK", date: "2023" },
+    { name: "UK Teacher Certification", issuer: "Golden Links UK", date: "Dec 15, 2021" },
+    { name: "Microsoft Certified: Azure Fundamentals", issuer: "Microsoft", date: "Dec 23, 2020" },
+    { name: "Google IT Support Professional Certificate", issuer: "Google", date: "2019" },
+    { name: "Certified Artificial Intelligence Professional", issuer: "IIEC", date: "2019" }
   ],
-  hobbies: "Photography, Hiking, Playing Chess, Open Source Contribution. Spoken Languages: English (Native), Spanish (Conversational)"
+  hobbies: "Strategic Games (Chess, Scrabble), Sports (Football, Swimming), Martial Arts (Kick Boxing Trainer), Fitness Coaching. Spoken Languages: English, Igbo, Yoruba, Hausa, French",
+  pageLimit: "fit-2"
 };
 
 // Current application state
-let resumeData = JSON.parse(localStorage.getItem('saved_resume_v4')) || { ...defaultResumeData };
+let resumeData = JSON.parse(localStorage.getItem('saved_resume_v5')) || { ...defaultResumeData };
+if (!resumeData.pageLimit) {
+  resumeData.pageLimit = "fit-2";
+}
+
+// Query parameter override for testing or direct URL setting
+const urlParams = new URLSearchParams(window.location.search);
+const fitParam = urlParams.get('fit');
+if (fitParam && ['fit-1', 'fit-2', 'fit-3'].includes(fitParam)) {
+  resumeData.pageLimit = fitParam;
+}
 
 // ==========================================
 // Initialization & Event Binding
@@ -131,11 +200,23 @@ function populateFormFields() {
   // Hobbies
   document.getElementById('input-hobbies').value = resumeData.hobbies || '';
 
+  // Page limit
+  document.getElementById('page-limit-select').value = resumeData.pageLimit || 'fit-2';
+  updateSheetClasses();
+
   // Dynamic Lists
   renderDynamicList('experience', renderExperienceItemForm);
   renderDynamicList('projects', renderProjectItemForm);
   renderDynamicList('education', renderEducationItemForm);
   renderDynamicList('certifications', renderCertificationItemForm);
+}
+
+// Helper to keep template and fit classes synced on the resume sheet
+function updateSheetClasses() {
+  const sheet = document.getElementById('resume-sheet');
+  const template = document.getElementById('template-select').value;
+  const fit = document.getElementById('page-limit-select').value;
+  sheet.className = `resume-sheet ${template} ${fit}`;
 }
 
 // Setup live update events and actions
@@ -175,8 +256,16 @@ function setupEventListeners() {
   // Template switching
   const templateSelect = document.getElementById('template-select');
   templateSelect.addEventListener('change', (e) => {
-    const sheet = document.getElementById('resume-sheet');
-    sheet.className = `resume-sheet ${e.target.value}`;
+    updateSheetClasses();
+    renderResume();
+  });
+
+  // Page limit switching
+  const limitSelect = document.getElementById('page-limit-select');
+  limitSelect.addEventListener('change', (e) => {
+    resumeData.pageLimit = e.target.value;
+    saveState();
+    updateSheetClasses();
     renderResume();
   });
 
@@ -224,7 +313,7 @@ function setupEventListeners() {
 
 // Save state to local storage
 function saveState() {
-  localStorage.setItem('saved_resume_v4', JSON.stringify(resumeData));
+  localStorage.setItem('saved_resume_v5', JSON.stringify(resumeData));
 }
 
 // Toggle app theme (Light / Dark)
@@ -456,11 +545,10 @@ function renderModernTechTemplate() {
 
       <div class="sidebar-section">
         <div class="sidebar-section-title">Certifications</div>
-        <div style="display:flex; flex-direction:column; gap:8px; font-size:11px;">
+        <div class="cert-list" style="display:flex; flex-direction:column; gap:5px; font-size:10.5px;">
           ${(resumeData.certifications || []).map(cert => `
             <div>
-              <div style="font-weight:700; color:#0f172a;">${cert.name}</div>
-              <div style="color:#64748b;">${cert.issuer ? cert.issuer : ''} ${cert.date ? `(${cert.date})` : ''}</div>
+              <strong style="color:#0f172a;">${cert.name}</strong><span style="color:#475569;">${cert.issuer ? `, ${cert.issuer}` : ''}${cert.date ? ` (${cert.date})` : ''}</span>
             </div>
           `).join('')}
         </div>
@@ -482,7 +570,7 @@ function renderModernTechTemplate() {
 
       <div class="section">
         <div class="section-title">Professional Experience</div>
-        <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="experience-list" style="display:flex; flex-direction:column; gap:16px;">
           ${(resumeData.experience || []).map(exp => `
             <div class="timeline-item">
               <div class="timeline-header">
@@ -500,7 +588,7 @@ function renderModernTechTemplate() {
       ${resumeData.projects && resumeData.projects.length > 0 ? `
       <div class="section">
         <div class="section-title">Key Projects</div>
-        <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="project-list" style="display:flex; flex-direction:column; gap:14px;">
           ${(resumeData.projects || []).map(proj => `
             <div class="project-item">
               <div class="project-header">
@@ -517,7 +605,7 @@ function renderModernTechTemplate() {
 
       <div class="section">
         <div class="section-title">Education</div>
-        <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="education-list" style="display:flex; flex-direction:column; gap:8px;">
           ${(resumeData.education || []).map(edu => `
             <div style="display:flex; justify-content:space-between; align-items:baseline;">
               <div>

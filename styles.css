@@ -930,6 +930,90 @@ body.light-theme .form-group textarea {
 }
 
 /* ==========================================================================
+   RESPONSIVE APP UI STYLES (Screen Viewports)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+
+  .app-container {
+    height: auto !important;
+    min-height: 100vh;
+  }
+
+  .app-header {
+    height: auto !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px 20px !important;
+  }
+
+  .header-logo {
+    justify-content: center;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .control-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .workspace {
+    flex-direction: column;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .editor-panel {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .preview-panel {
+    padding: 20px 10px !important;
+    overflow-x: auto !important; /* Enables horizontal scroll on tiny screens to see A4 sheet exactly */
+    justify-content: flex-start !important; /* Prevents center cropping when viewport is too small */
+  }
+
+  .preview-container {
+    margin: 0 auto;
+    width: 794px; /* Maintain A4 layout proportions */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 12px !important;
+  }
+
+  .action-buttons .btn {
+    flex: 1 1 40%; /* Stack buttons in 2 columns on very narrow screens */
+    justify-content: center;
+    font-size: 12.5px;
+    padding: 8px 12px;
+  }
+}
+
+/* ==========================================================================
    PRINT / PDF CSS STYLES (Clean Export Settings)
    ========================================================================== */
 @media print {
@@ -968,12 +1052,225 @@ body.light-theme .form-group textarea {
     min-height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
-    font-size: 12px !important;
     background: #ffffff !important;
     color: #000000 !important;
   }
 
-  /* Force light theme elements on modern tech sidebar */
+  /* --------------------------------------------------------------------------
+     PAGE BUDGET SCALING STYLES (Modern Tech Template)
+     -------------------------------------------------------------------------- */
+
+  /* --- 1 PAGE MODE (fit-1) - ULTRA COMPACT & CONTENT TRUNCATED --- */
+  .resume-sheet.fit-1 {
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .sidebar {
+    padding: 12px 10px !important;
+    gap: 6px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .main-content {
+    padding: 12px 12px !important;
+    gap: 6px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .name {
+    font-size: 14px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .title {
+    font-size: 8.5px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .contact-details {
+    padding-top: 4px !important;
+    gap: 1px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .sidebar-section {
+    gap: 4px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .sidebar-section-title {
+    font-size: 9px !important;
+    margin-bottom: 1px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .skill-badge {
+    padding: 1px 2px !important;
+    font-size: 7px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .section {
+    gap: 4px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .section-title {
+    font-size: 10px !important;
+    padding-bottom: 2px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .summary-text {
+    line-height: 1.25 !important;
+    font-size: 8.5px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .timeline-item {
+    margin-bottom: 2px !important;
+    gap: 0px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .item-role-org {
+    font-size: 9.5px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .item-date {
+    font-size: 7.5px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .item-bullets {
+    padding-left: 10px !important;
+    margin-top: 1px !important;
+    gap: 1px !important;
+  }
+  .resume-sheet.fit-1 .modern-tech .item-bullets li {
+    font-size: 8.5px !important;
+    line-height: 1.2 !important;
+  }
+  /* Truncation rules for 1-page layout */
+  .resume-sheet.fit-1 .experience-list .timeline-item:nth-child(n+3) .item-bullets {
+    display: none !important; /* Hide older job bullets */
+  }
+  .resume-sheet.fit-1 .cert-list > div:nth-child(n+6) {
+    display: none !important; /* Show only top 5 certifications */
+  }
+  .resume-sheet.fit-1 .education-list > div:nth-child(n+4) {
+    display: none !important; /* Show only top 3 education items */
+  }
+  .resume-sheet.fit-1 .modern-tech .sidebar .sidebar-section:last-child {
+    display: none !important; /* Hide hobbies in 1-page layout */
+  }
+
+  /* --- 2 PAGES MODE (fit-2) - BALANCED (DEFAULT) --- */
+  .resume-sheet.fit-2 {
+    font-size: 10.5px !important;
+    line-height: 1.35 !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .sidebar {
+    padding: 18px 12px !important;
+    gap: 12px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .main-content {
+    padding: 18px 16px !important;
+    gap: 12px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .name {
+    font-size: 18px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .title {
+    font-size: 10px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .contact-details {
+    padding-top: 8px !important;
+    gap: 3px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .sidebar-section {
+    gap: 6px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .sidebar-section-title {
+    font-size: 11px !important;
+    padding-bottom: 2px !important;
+    margin-bottom: 2px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .skill-badge {
+    padding: 1px 3px !important;
+    font-size: 8.5px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .section {
+    gap: 6px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .section-title {
+    font-size: 12px !important;
+    padding-bottom: 3px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .summary-text {
+    line-height: 1.4 !important;
+    font-size: 10.5px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .timeline-item {
+    margin-bottom: 6px !important;
+    gap: 1px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .item-role-org {
+    font-size: 11.5px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .item-date {
+    font-size: 9.5px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .item-bullets {
+    padding-left: 12px !important;
+    margin-top: 1px !important;
+    gap: 1px !important;
+  }
+  .resume-sheet.fit-2 .modern-tech .item-bullets li {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* --- 3 PAGES MODE (fit-3) - EXPANDED / RELAXED --- */
+  .resume-sheet.fit-3 {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .sidebar {
+    padding: 30px 20px !important;
+    gap: 20px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .main-content {
+    padding: 30px 24px !important;
+    gap: 20px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .name {
+    font-size: 22px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .title {
+    font-size: 12px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .contact-details {
+    padding-top: 12px !important;
+    gap: 5px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .sidebar-section {
+    gap: 10px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .sidebar-section-title {
+    font-size: 12px !important;
+    padding-bottom: 3px !important;
+    margin-bottom: 3px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .skill-badge {
+    padding: 2px 5px !important;
+    font-size: 9.5px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .section {
+    gap: 10px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .section-title {
+    font-size: 14px !important;
+    padding-bottom: 4px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .summary-text {
+    line-height: 1.5 !important;
+    font-size: 11.5px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .timeline-item {
+    margin-bottom: 10px !important;
+    gap: 3px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .item-role-org {
+    font-size: 13px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .item-date {
+    font-size: 11px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .item-bullets {
+    padding-left: 16px !important;
+    margin-top: 3px !important;
+    gap: 2px !important;
+  }
+  .resume-sheet.fit-3 .modern-tech .item-bullets li {
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Force light theme colors on sidebar & badges when printing */
   .modern-tech .sidebar {
     background-color: #f1f5f9 !important;
     print-color-adjust: exact;
@@ -987,9 +1284,20 @@ body.light-theme .form-group textarea {
     -webkit-print-color-adjust: exact;
   }
 
+  /* Prevent page breaks inside logical items, but allow sections to break between items */
+  .timeline-item,
+  .project-item,
+  .skill-group,
+  .education-list > div,
+  .cert-list > div {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    -webkit-column-break-inside: avoid !important;
+  }
+
   /* Set page rules */
   @page {
     size: A4;
-    margin: 1.5cm;
+    margin: 0.8cm 1.0cm; /* Standard print margin */
   }
 }
