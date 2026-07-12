@@ -521,6 +521,40 @@ function renderResume() {
   } else if (template === 'executive') {
     container.innerHTML = renderExecutiveTemplate();
   }
+
+  // Update height warning badge
+  setTimeout(updateHeightWarning, 50);
+}
+
+// Function to check height constraints and warn if content overflows the chosen page budget
+function updateHeightWarning() {
+  const sheet = document.getElementById('resume-sheet');
+  const badge = document.getElementById('height-warning-badge');
+  if (!sheet || !badge) return;
+
+  const height = sheet.scrollHeight;
+  const fit = resumeData.pageLimit || 'fit-2';
+  
+  let limit = 2124; // Default to 2 pages (approx 1062px per page in print)
+  let pages = 2;
+  if (fit === 'fit-1') {
+    limit = 1062;
+    pages = 1;
+  } else if (fit === 'fit-3') {
+    limit = 3186;
+    pages = 3;
+  }
+
+  // Calculate current page counts based on A4 printable height (1062px at 96dpi)
+  const currentPages = Math.ceil(height / 1062);
+  
+  if (currentPages <= pages) {
+    badge.style.backgroundColor = "var(--accent)";
+    badge.innerHTML = `🟢 Fits: ${currentPages}/${pages} Page(s) (${height}px/${limit}px)`;
+  } else {
+    badge.style.backgroundColor = "var(--danger)";
+    badge.innerHTML = `⚠️ Overflow: ${currentPages}/${pages} Page(s) (${height}px/${limit}px)`;
+  }
 }
 
 // --- TEMPLATE 1: MODERN TECH SIDEBAR RENDERER ---
