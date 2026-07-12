@@ -22,10 +22,6 @@
         <h1>Resume<span>Crafter</span></h1>
       </div>
       
-      <div id="height-warning-badge" class="height-badge no-print" style="font-size: 12px; padding: 6px 12px; border-radius: 20px; font-weight: 700; color: #fff; background-color: var(--accent); transition: all 0.3s; margin: 0 16px;">
-        Checking height...
-      </div>
-      
       <div class="header-controls">
         <div class="control-group">
           <label for="template-select">Style Template:</label>
@@ -70,9 +66,14 @@
       
       <!-- Left: Editor Panel -->
       <section class="editor-panel no-print">
-        <div class="panel-header">
-          <h2>Resume Editor</h2>
-          <span class="subtitle">Customize your details below</span>
+        <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+          <div>
+            <h2>Resume Editor</h2>
+            <span class="subtitle">Customize your details below</span>
+          </div>
+          <div id="height-warning-badge" class="height-badge" style="font-size: 11px; padding: 5px 10px; border-radius: 20px; font-weight: 700; color: #fff; background-color: var(--accent); white-space: nowrap; transition: all 0.3s;">
+            Checking height...
+          </div>
         </div>
 
         <div class="editor-sections">
